@@ -5,7 +5,7 @@ class LinkedListNode {
   }
 }
 
-class SinglyLinkedList {
+export default class SinglyLinkedList {
   constructor() {
     this.head = null
     this.tail = null;
@@ -56,6 +56,14 @@ class SinglyLinkedList {
     }
     this.display();
     return this;
+  }
+  deleteFirst() {
+    if (this.head) {
+      const headData = this.head.data;
+      this.head = this.head.next;
+      return headData;
+    }
+    return null;
   }
   display() {
     let currentNode = this.head;
